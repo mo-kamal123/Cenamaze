@@ -1,4 +1,4 @@
-import FetchMediaData from "../fetchMediaData";
+import FetchMediaData from "../FetchMediaData";
 
 function MovieDetails({ id }) {
   return (
