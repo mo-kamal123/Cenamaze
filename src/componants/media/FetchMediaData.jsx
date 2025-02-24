@@ -3,6 +3,8 @@ import Nav from "../Nav";
 import PersonData from "./persons/PersonData";
 import MovieData from "./movies/MovieData";
 import TvData from "./tv/TvData";
+import SmallNav from "../SmallNav";
+import Spinner from "../Spinner";
 
 function FetchMediaData({ url, type }) {
   const [media, setMedia] = useState({});
@@ -24,8 +26,8 @@ function FetchMediaData({ url, type }) {
         console.log(data);
       } catch (err) {
         console.log(err);
-      }finally {
-        setLoading(false)
+      } finally {
+        setLoading(false);
       }
     };
     fetchMedia(url);
@@ -33,7 +35,13 @@ function FetchMediaData({ url, type }) {
   if (type === "movie" && !loading) {
     return (
       <>
-        <Nav />
+        <div></div>
+        <div className="lg:hidden">
+          <SmallNav />
+        </div>
+        <div className="hidden lg:block">
+          <Nav />
+        </div>
         <MovieData media={media} />
       </>
     );
@@ -41,21 +49,30 @@ function FetchMediaData({ url, type }) {
   if (type === "tv" && !loading) {
     return (
       <>
-        <Nav />
+        <div className="lg:hidden">
+          <SmallNav />
+        </div>
+        <div className="hidden lg:block">
+          <Nav />
+        </div>
         <TvData media={media} />
-
       </>
     );
   }
   if (type === "person" && !loading) {
     return (
       <>
-        <Nav />
+        <div className="lg:hidden">
+          <SmallNav />
+        </div>
+        <div className="hidden lg:block">
+          <Nav />
+        </div>{" "}
         <PersonData media={media} />
       </>
     );
   }
-  return <div>loading ...</div>;
+  return <div><Spinner /></div>;
 }
 
 export default FetchMediaData;

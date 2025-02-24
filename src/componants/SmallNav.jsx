@@ -12,7 +12,7 @@ function SmallNav() {
   };
   return (
     <>
-      <div className="flex justify-between p-5 items-center w-full bg-black relative z-50">
+      <div className="flex fixed justify-between p-5 items-center w-full bg-black  z-50">
         <Link to={"/"} className="logo text-3xl text-red-500">
           Cenamaze
         </Link>{" "}

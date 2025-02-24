@@ -4,6 +4,7 @@ import Modal from "../../Modal";
 import MovieCast from "./MovieCast";
 import MovieGenre from "./MovieGenre";
 import HomeSliders from "../../HomeSliders";
+import Spinner from "../../Spinner";
 
 function MovieData({ media }) {
   const [videos, setVideos] = useState([]);
@@ -71,7 +72,7 @@ function MovieData({ media }) {
   const closeModal = () => setIsModalOpen(false);
 
   if (isLoading && !media) {
-    return <div className="text-center text-9xl text-red-700">Loading...</div>;
+    return <div className="text-center text-9xl bg-black w-full h-svh text-red-700"><Spinner /></div>;
   }
 
   return (
@@ -84,14 +85,14 @@ function MovieData({ media }) {
             }}
       >
       <div className="flex items-center justify-start p-8 bg-black/50 bg-gradient-to-t from-black/90 via-black/30 to-black/10 w-full h-full">
-        <div className="ml-8 w-1/2 text-white">
+        <div className="lg:ml-8 w-full lg:w-1/2 text-white">
           <h1 className="text-4xl font-bold">{media.original_title}</h1>
           <div className="flex gap-5 items-center my-3">
             <p>{media.vote_average}</p>
             <p>{media.runtime}min</p>
             <p>{media.release_date}</p>
           </div>
-          <p className="mt-4 text-[15px]">{media.overview}</p>
+          <p className="mt-4 text-sm text-neutral-300 lg:text-[15px]">{media.overview}</p>
           <button
             onClick={openModal}
             className="flex items-center gap-3 mt-3 transition-all duration-300 cursor-pointer hover:text-red-500"

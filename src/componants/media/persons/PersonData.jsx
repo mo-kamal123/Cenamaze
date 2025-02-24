@@ -100,7 +100,7 @@ function PersonData({ media }) {
       <div>
         {active === "movies" && (
           <div className={`w-[90%] my-2 m-auto transition-all duration-300 ${active === "movie" ? "opacity-0" : "opacity-100"}`}>
-            <ul className="grid grid-cols-5 gap-10">
+            <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
               {personMovies.cast?.map((movie) => (
                 <li className="relative" key={movie.id}>
                   <div className="overflow-hidden rounded-lg group">
@@ -115,7 +115,6 @@ function PersonData({ media }) {
         )}
         {active === "tv" && (
           <div className={`w-[90%] m-auto transition-all duration-300 ${active === "tv" ? "opacity-100" : "opacity-0"}`}>
-            <h2>TV Shows</h2>
             <ul className="grid grid-cols-5 gap-10">
               {personTv.cast?.map((show) => (
                 <li className="relative overflow-hidden rounded-lg" key={show.id}>

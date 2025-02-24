@@ -43,8 +43,8 @@ function Home() {
     <div
       className="bg-black text-white "
     >
-        {/* <Nav /> */}
-        <SmallNav />
+      <div className="lg:hidden"><SmallNav /></div>
+      <div className="hidden lg:block"><Nav /></div>
       <Intro />
       <Trending />
       <Upcoming />

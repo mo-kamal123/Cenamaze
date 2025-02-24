@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
 
 function HomeSliders({ sectionName, url, path }) {
   const [trending, setTrending] = useState([]);
@@ -52,7 +53,7 @@ function HomeSliders({ sectionName, url, path }) {
           </Link>
           <div className="w-4 h-2 mt-4 rounded-full bg-red-500 group-hover:w-full transition-all duration-300"></div>
         </div>
-        <div className="h-full flex justify-center items-center">Loading ...</div>
+        <div className="bg-black w-full h-svh flex justify-center items-center"><Spinner /></div>
       </div>
     );
   }
@@ -70,7 +71,7 @@ function HomeSliders({ sectionName, url, path }) {
     // spaceBetween={30}
     pagination={{
       clickable: true,
-    }} // Removed the extra comma here
+    }}
     breakpoints={{
       340: {
         slidesPerView: 2,

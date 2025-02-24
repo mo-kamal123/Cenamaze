@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import Nav from "../Nav";
 import { useEffect, useState } from "react";
 import FetchSectionsData from "./FetchSectionsData";
+import Spinner from "../Spinner";
 
 function GenreHandel() {
   const [genreList, setGenreList] = useState([]);
@@ -38,7 +39,7 @@ function GenreHandel() {
     getGenreList("movie");
   }, []);
   if (loading) {
-    return <div className=""> loading ....</div>;
+    return <div className=""> <Spinner /></div>;
   }
   return (
     <div className="bg-black h-svh">

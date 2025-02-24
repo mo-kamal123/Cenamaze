@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCreative, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import {  Pagination} from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -12,11 +12,24 @@ function MovieCast({cast}) {
     <div className="w-[90%] m-auto">
     <h2 className="text-4xl font-bold mb-4 text-white">Cast</h2>
     <Swiper
-      slidesPerView={6}
       spaceBetween={30}
       pagination={{
         clickable: true,
       }}
+    breakpoints={{
+      340: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      600: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1000: {
+        slidesPerView: 6,
+        spaceBetween: 40,
+      },
+    }}
       modules={[Pagination]}
       className="mySwiper"
     >

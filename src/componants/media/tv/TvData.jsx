@@ -32,13 +32,13 @@ function TvData({ media }) {
         }}
       >
         <div className="flex items-center justify-start p-8 bg-black/50 bg-gradient-to-t from-black/90 via-black/30 to-black/10 w-full h-full">
-          <div className="ml-8 w-1/2 text-white">
+          <div className="lg:ml-8 lg:w-1/2 text-white">
             <h1 className="text-4xl font-bold">{media.name}</h1>
             <div className="flex gap-5 items-center my-3">
               <p>{media.vote_average}</p>
               <p>{media.first_air_date}</p>
             </div>
-            <p className="mt-4 text-[15px]">{media.overview}</p>
+            <p className="mt-4 text-sm text-neutral-300 lg:text-[15px]">{media.overview}</p>
           </div>
         </div>
       </div>

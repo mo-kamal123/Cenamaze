@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Nav from "../Nav";
 import MediaLayout from "./MediaLayout";
 import SmallNav from "../SmallNav";
+import Spinner from "../Spinner";
 
 function FetchSectionsData({ url, section }) {
   const [media, SetMedia] = useState([]);
@@ -37,13 +38,14 @@ function FetchSectionsData({ url, section }) {
   if (media && loading) {
     return (
       <div className="bg-black min-h-svh">
-        <Nav />
-        <div className="pt-26 w-[90%] m-auto">
+      <div className="lg:hidden"><SmallNav /></div>
+      <div className="hidden lg:block"><Nav /></div>
+              <div className="pt-26 w-[90%] m-auto">
           <div className="group w-fit">
             <h1 className="text-4xl text-white">{section}</h1>
             <div className="h-2 w-7 bg-red-500 rounded-full mt-2 group-hover:w-full transition-all duration-300"></div>
           </div>
-          <div className="text-white flex items-center justify-center h-80"> loading....</div>
+          <div className="text-white flex items-center justify-center h-80"> <Spinner /></div>
         </div>
         <div className="text-white flex items-center justify-center gap-5 pb-10">
           <button

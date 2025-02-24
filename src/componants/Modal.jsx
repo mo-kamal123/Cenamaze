@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose, trailerKey }) => {
 
         {/* Trailer Video */}
         <iframe
-          className="w-full h-[500px]"
+          className="w-full lg:h-[500px]"
           src={`https://www.youtube.com/embed/${trailerKey}`}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
