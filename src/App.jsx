@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./componants/home";
+// import Home from "./componants/Home";
 import NowMovies from "./componants/media/movies/NowMovies";
 import PopularMovies from "./componants/media/movies/PopularMovies";
 import TopMovies from "./componants/media/movies/TopMovies";
@@ -12,7 +12,8 @@ import TopTv from "./componants/media/tv/TopTv";
 import GenreHandel from "./componants/media/GenreHandel";
 import HomeTrending from "./componants/HomeTrending";
 import SearchResult from "./componants/SearchResult";
-import MediaHandel from "./componants/media/mediaHandel";
+import MediaHandel from "./componants/media/MediaHandel";
+import Home from "./componants/Home";
 
 function App() {
   return (
